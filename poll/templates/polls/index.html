@@ -1,0 +1,27 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Polls</title>
+    <link rel="stylesheet" href="{% static 'polls/style.css' %}" />
+  </head>
+  <body>
+    <div class="container">
+      <div class="side">
+        <h1 class="poll-title">Polls</h1>
+        <div class="poll-img"></div>
+      </div> 
+      {% if latest_qlist %}
+          <ul>
+              {% for q in latest_qlist %}
+                  <li><a href="{% url 'polls:detail1' q.id %}"> {{ q.question_text}}</li>
+              {% endfor %}
+          </ul>
+      {% else %}
+          <p> No polls found </p>
+      {% endif %}
+      <div>
+  </body>
+</html>

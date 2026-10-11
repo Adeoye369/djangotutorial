@@ -1,0 +1,36 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Detail Page </title>
+    <link rel=stylesheet href="{% static 'polls/style.css' %}"
+</head>
+<body>
+    <div class="container">
+        <form class="form" action="{% url 'polls:vote' q.id%}" method="post">
+            {% csrf_token %}
+            <fieldset>
+                <legend><h2>{{q.question_text}}</h2></legend>
+            
+                {% if error_message %} 
+                <p><strong> {{ error_message}}</strong></p>
+                {% endif %}
+
+                {% for choice in q.choiceselection_set.all %}
+                    <input type="radio" name="choice" 
+                        id="choice{{ forloop.counter }}" 
+                        value="{{choice.id}}">
+                    <label for="choice{{ forloop.counter}}"> 
+                        {{ choice.choice_text}}"
+                    </label><br>
+                {% endfor %}
+            </fieldset>
+            <input type="submit" value="Vote">
+        </form>
+    </div>
+</body>
+</html>
+
+

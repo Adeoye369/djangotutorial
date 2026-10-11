@@ -1,0 +1,83 @@
+
+:root{
+    --bright_color: #b9fd00;
+    --dark_color: #10111f;
+    --accent_color: #f6b40e;
+    --secondary_color: #8990f8;
+}
+
+body {
+    background-color: var(--dark_color);
+    color: #f5f5f5;
+}
+
+a:link {
+    color: var(--bright_color);
+    text-decoration: none;
+}
+
+a:visited {
+    color: var(--bright_color);
+}
+
+.container{
+    width: 50vw;
+    margin: 30px auto;  
+    padding: 20px;
+    background-color: #2a2a3c;
+
+    display: flex;
+    justify-content: center;
+
+}
+
+div.container h1{
+    text-align: center;
+    font-size: 2rem;
+    color: var(--secondary_color);
+}
+div.container li{
+    list-style-type: none;
+    padding: 10px;
+    margin: 10px;
+    border: 2px solid var(--secondary_color);
+    font-size: 1.2rem;
+}
+
+div.side{ 
+    display: flex; 
+    flex-direction: column; 
+    justify-content: flex-start;
+    align-items: center;
+}
+
+div.poll-img{
+    width: 100px; height: 100px;
+    background:  url("images/poll-image.png") no-repeat center / contain;
+}
+
+div.container fieldset{
+    border: 2px solid var(--secondary_color);
+    padding: 20px;
+    margin: 20px;
+}
+
+div.container fieldset legend{
+    font-size: 1rem;
+    color: var(--bright_color);
+}
+
+div.container input[type="submit"]{
+    background-color: var(--secondary_color);
+    color: #fff;
+    text-shadow: -1px 1px 0px var(--dark_color);
+    font-size: 1rem;
+    font-weight: bold;
+    padding: 10px 20px;
+    margin-left: 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+
